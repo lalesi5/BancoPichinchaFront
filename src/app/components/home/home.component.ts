@@ -9,6 +9,8 @@ import {DataService} from "../../services/data.service.ts.service";
 export class HomeComponent implements OnInit {
 
   pokemons: any[] = [];
+  // @ts-ignore
+  idElementoEliminar: number;
 
   constructor(
     private dataService: DataService
@@ -20,6 +22,18 @@ export class HomeComponent implements OnInit {
         this.pokemons = response;
         console.log(this.pokemons);
       })
+  }
+
+
+  onDelete(id:any){
+
+    if (confirm('Desea eliminar el elemento')){
+      this.dataService.deletePokemons(id)
+        .subscribe((responseDel:any) =>{
+          console.log(responseDel);
+        })
+    }
+
   }
 
 }

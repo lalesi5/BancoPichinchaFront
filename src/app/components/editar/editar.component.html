@@ -37,3 +37,34 @@
 </div>
 
 <div class="clearfix"></div>
+
+<aside id="sidebar">
+  <div class="subheader">
+    <h1>Editar Pokemons</h1>
+  </div>
+  <div id="nav-blog" class="sidebar-item">
+    <div>
+      <table id="tablePokemons">
+        <tr>
+          <td>Nombre</td>
+          <td>Imagen</td>
+          <td>Ataque</td>
+          <td>Defensa</td>
+          <td>Acciones</td>
+        </tr>
+        <tr *ngFor="let pokemon of pokemons">
+          <td>{{pokemon.name}}</td>
+          <td><img alt="Pokemon" src="{{pokemon.image}}"></td>
+          <td>{{pokemon.attack}}</td>
+          <td>{{pokemon.defense}}</td>
+          <td>
+            <button class="btn" >
+              Editar
+            </button>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</aside>
+<div class="clearfix"></div>

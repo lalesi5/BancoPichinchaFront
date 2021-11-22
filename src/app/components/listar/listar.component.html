@@ -1,9 +1,12 @@
 <aside id="sidebar">
   <div id="nav-blog" class="sidebar-item">
-    <form>
-      <input [routerLink]="['buscar']" [routerLinkActive]="['active']" type="text" name="search" placeholder="Buscar">
+
+      <a [routerLink]="['home']" [routerLinkActive]="['active']" class="btn">HOME</a>
+      <a [routerLink]="['buscar']" [routerLinkActive]="['active']" class="btn">BUSCAR</a>
       <a [routerLink]="['agregar']" [routerLinkActive]="['active']" class="btn">NUEVO</a>
-    </form>
+      <a [routerLink]="['editar']" [routerLinkActive]="['active']" class="btn">EDITAR</a>
+
   </div>
 </aside>
 
+<div class="clearfix"></div>

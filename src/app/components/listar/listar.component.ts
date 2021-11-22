@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Output} from '@angular/core';
+import {DataService} from "../../services/data.service.ts.service";
 
 @Component({
   selector: 'app-listar',
@@ -7,14 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListarComponent implements OnInit {
 
-  constructor(
 
-  ) { }
+  constructor(
+    private dataService: DataService
+  ) {
+  }
 
   ngOnInit(): void {
 
   }
-
-
 
 }

@@ -10,6 +10,8 @@ import {Pokemon} from "../../models/pokemon";
 export class AgregarComponent implements OnInit {
 
   pokemons: any[] = [];
+  // @ts-ignore
+  colectorInfo: Pokemon = {};
 
   constructor(
     private dataService: DataService
@@ -23,4 +25,30 @@ export class AgregarComponent implements OnInit {
       })
   }
 
+/*
+  randomCoding(){
+
+    var arr = ['water','fire','normal','bug','poison'];
+    var idvalue ='';
+    let n = 4;
+    for(var i=0;i<n;i++){
+      idvalue+=arr[Math.floor(Math.random()*5)];
+    }
+    return idvalue;
+  }
+*/
+
+
+  onSubmit() {
+    if (confirm('Desea agregar el elemento')) {
+      this.colectorInfo.idAuthor = 2;
+      this.colectorInfo.hp = Math.floor(Math.random() * (100 - 1) + 1);
+      this.colectorInfo.type = 'fire';
+      console.log(this.colectorInfo);
+      this.dataService.addPokemons(this.colectorInfo)
+        .subscribe((response: any) => {
+          console.log(response);
+        })
+    }
+  }
 }

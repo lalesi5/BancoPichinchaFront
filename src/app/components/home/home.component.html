@@ -18,11 +18,8 @@
           <td>{{pokemon.attack}}</td>
           <td>{{pokemon.defense}}</td>
           <td>
-            <button class="btn-edit">
-              <img src="assets/images/edit.png">
-            </button>
-            <button class="btn-edit">
-              <img src="assets/images/Delete.png">
+            <button class="btn" (click)="onDelete(pokemon.id)" >
+              Eliminar
             </button>
           </td>
         </tr>

@@ -10,6 +10,8 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
 import { HomeComponent } from './components/home/home.component';
 import { AgregarComponent } from './components/agregar/agregar.component';
 import { BuscarComponent } from './components/buscar/buscar.component';
+import {FormsModule} from "@angular/forms";
+import { EditarComponent } from './components/editar/editar.component';
 
 @NgModule({
   declarations: [
@@ -20,11 +22,13 @@ import { BuscarComponent } from './components/buscar/buscar.component';
     HomeComponent,
     AgregarComponent,
     BuscarComponent,
+    EditarComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    routing
+    routing,
+    FormsModule
   ],
   providers: [appRoutingProviders],
   bootstrap: [AppComponent]
