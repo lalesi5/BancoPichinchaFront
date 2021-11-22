@@ -32,6 +32,7 @@ export class EditarComponent implements OnInit {
       this.colectorInfo.idAuthor = 2;
       this.colectorInfo.hp = Math.floor(Math.random() * (100 - 1) + 1);
       this.colectorInfo.type = 'fire';
+      this.colectorInfo.id = this.datosEdit.id;
       console.log(this.colectorInfo);
       this.dataService.putPokemons(this.colectorInfo)
         .subscribe((response: any) => {
