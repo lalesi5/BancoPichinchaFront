@@ -35,6 +35,7 @@ export class DataService {
   }
 
   putPokemons(pokemon: Pokemon){
+    this.urlAPI = `${this.urlAPI}${pokemon.id}`;
     return this.http.put<Pokemon>(this.urlAPI, pokemon);
   }
 
