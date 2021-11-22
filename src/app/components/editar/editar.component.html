@@ -1,30 +1,32 @@
 <div>
-  <form #formularioIngreso="ngForm">
-    <h2 class="subheader">Nuevo Pokemon</h2>
+  <form #formularioEdicion="ngForm">
+    <h2 class="subheader">Editar Pokemon</h2>
     <div class="center">
       <table class="center">
         <tr>
           <td>
             <a>Nombre </a>
-            <input type="text" name="pokemonName" #nombre="ngModel" [(ngModel)]="colectorInfo.name">
+            <input type="text" name="pokemonName" #nombre="ngModel" [(ngModel)]="colectorInfo.name" placeholder="{{datosEdit.name}}">
           </td>
           <td>
             <a>Ataque: </a>
             <a>0</a>
-            <input type="range" id="atack" name="atack" min="0" max="100" #atack="ngModel" [(ngModel)]="colectorInfo.attack">
+            <input type="range" id="atack" name="atack" min="0" max="100" #atack="ngModel" [(ngModel)]="colectorInfo.attack" placeholder="{{datosEdit.attack}}">
             <a>100</a>
+            <a> Valor Actual: {{datosEdit.attack}} Nuevo: {{colectorInfo.attack}}</a>
           </td>
         </tr>
         <tr>
           <td>
             <a>Imagen </a>
-            <input type="text" name="image" placeholder="URL" #image="ngModel" [(ngModel)]="colectorInfo.image">
+            <input type="text" name="image" placeholder="URL" #image="ngModel" [(ngModel)]="colectorInfo.image" placeholder="{{datosEdit.image}}">
           </td>
           <td>
             <a>Defensa: </a>
             <a>0</a>
-            <input type="range" id="defense" name="defemse" min="0" max="100" #defense="ngModel" [(ngModel)]="colectorInfo.defense">
+            <input type="range" id="defense" name="defemse" min="0" max="100" #defense="ngModel" [(ngModel)]="colectorInfo.defense" placeholder="{{datosEdit.defense}}">
             <a>100</a>
+            <a> Valor Actual: {{datosEdit.defense}} Nuevo: {{colectorInfo.defense}}</a>
           </td>
         </tr>
         <div class="center">
@@ -58,7 +60,7 @@
           <td>{{pokemon.attack}}</td>
           <td>{{pokemon.defense}}</td>
           <td>
-            <button class="btn" >
+            <button class="btn" (click)="onEdit(pokemon)">
               Editar
             </button>
           </td>
